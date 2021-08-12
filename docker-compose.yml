@@ -1,0 +1,35 @@
+# Use root/example as user/password credentials
+version: '3.9'
+
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    ports: 
+      - "5433:5432"
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 1qaz2wsx
+    networks: 
+      - mynetwork
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports: 
+      - "3000:3000"
+    container_name: "app"
+    depends_on: 
+      - postgresql
+    environment: 
+      DATABASE_URL: postgres://postgres:1qaz2wsx@postgresql:5432/postgres
+    networks: 
+      - mynetwork
+    
+networks: 
+    mynetwork:
+        driver: bridge
