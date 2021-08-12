@@ -1,4 +1,4 @@
-FROM ruby:2.7.3-alpine as develop
+FROM ruby:2.7.3 as develop
 
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /app
