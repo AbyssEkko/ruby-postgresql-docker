@@ -1,0 +1,2 @@
+rails g resource survey titulo tipo tema estado fecha_hora_creacion minutos_periodicidad fecha_hora_fin_recurrencia
+rails db:migrate
