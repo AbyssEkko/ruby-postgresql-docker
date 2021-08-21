@@ -4,6 +4,7 @@ version: '3.9'
 services:
   postgresql:
     image: postgres:latest
+    container_name: db
     restart: always
     ports: 
       - "5433:5432"
@@ -16,6 +17,7 @@ services:
 
   app:
     image: app
+    container_name: back
     build: 
       context: .
       dockerfile: Dockerfile
@@ -29,7 +31,7 @@ services:
       DATABASE_URL: postgres://postgres:1qaz2wsx@postgresql:5432/postgres
     networks: 
       - mynetwork
-    
+
 networks: 
     mynetwork:
         driver: bridge

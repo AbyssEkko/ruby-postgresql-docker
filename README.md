@@ -1,9 +1,24 @@
 # README
 
-# COMANDOS
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Primero:
-    $ docker build -t app .
+Things you may want to cover:
 
-Segundo:
-    $ docker-compose up
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
